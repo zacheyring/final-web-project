@@ -1,0 +1,27 @@
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.header {
+    background-color: navy;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.section {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid gray;
+}
+
+h2 {
+    color: darkblue;
+}
+
+a {
+    color: gold;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basketball Shot Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef5ff;
+            color: #222;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .app {
+            background-color: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid navy;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 150px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: navy;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        #result {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: darkblue;
+        }
+
+        a {
+            color: navy;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app">
+    <h1>Basketball Shot Percentage Calculator</h1>
+
+    <p>Enter how many shots you made and how many shots you attempted.</p>
+
+    <input type="number" id="made" placeholder="Shots made">
+    <input type="number" id="attempted" placeholder="Shots attempted">
+
+    <br>
+
+    <button onclick="calculatePercentage()">Calculate</button>
+
+    <p id="result"></p>
+
+    <p>
+        <a href="scratch.html">Back to Scratch Page</a> |
+        <a href="index.html">Professional Site</a>
+    </p>
+</div>
+
+<script>
+    function calculatePercentage() {
+        let made = Number(document.getElementById("made").value);
+        let attempted = Number(document.getElementById("attempted").value);
+        let result = document.getElementById("result");
+
+        if (attempted <= 0) {
+            result.textContent = "Please enter a valid number of attempts.";
+            return;
+        }
+
+        if (made < 0 || made > attempted) {
+            result.textContent = "Shots made must be between 0 and attempts.";
+            return;
+        }
+
+        let percentage = (made / attempted) * 100;
+        result.textContent = "Your shooting percentage is " + percentage.toFixed(1) + "%";
+    }
+</script>
+
+</body>
+</html>
